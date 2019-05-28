@@ -6,7 +6,7 @@ Questo software è uno strumento che mostra con chiarezza e semplicità varie in
 
 Progetto realizzato per lo stage trimestrale del corso di Laurea Triennale in Informatica dell'università degli studi di Milano-Bicocca.
 
-## ScreenShot
+## ScreenShots
 
 ![](Immagini/1.png)
 ![](Immagini/2.png)
