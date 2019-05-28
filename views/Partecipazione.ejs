@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> LAD - Partecipazione </title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/Partecipazione.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body>
+      
+      <% include Nav.ejs %>
+
+      <div id="contenuto">
+
+         <div id="g-mesi"> </div>
+         <div id="g-settimane"> </div>       
+
+         <div id="filtro">
+            <p> Applica Un Filtro Per Visualizzare Più Dettagli : </p>
+            <form action="PartecipazioneForm" method="get">
+               <select name="SelTempo" id="SelTempo" onchange="f()">
+                  <option> Di Sempre </option>
+                  <option> Filtro Mesi </option>
+                  <option> Filtro Settimane </option>
+               </select>
+               <select id="Filtro" name="Filtro">
+               </select>
+               <input type="submit">
+            </form>
+         </div>                      
+
+      </div>
+
+      <script type="text/javascript">
+         google.charts.load('current', {'packages':['corechart']});
+         google.charts.setOnLoadCallback(drawChart1);
+         google.charts.setOnLoadCallback(drawChart2);
+         function drawChart1() {
+           var data = google.visualization.arrayToDataTable(<%- gmesi %>);
+           var options = {
+              width: 1280,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Mesi",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  viewWindow: {
+                     min: 10,
+                     max: 11000
+                  },
+                  ticks: [10,2500,5000,7500,10000]
+               }
+            };
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-mesi"));
+           chart.draw(data, options);
+         }
+         function drawChart2() {
+           var data = google.visualization.arrayToDataTable(<%- gsettimane %>);
+           var options = {
+              width: 1280,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Settimane",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,
+                         26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,42,44,45,46,47,48,49,50]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  viewWindow: {
+                     min: 10,
+                     max: 4000
+                  },
+                  ticks: [10,1000,2000,3000,4000]
+               }
+            };
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-settimane"));
+           chart.draw(data, options);
+         }
+      </script>
+
+      <script>
+         function f() {
+            var x = document.getElementById("SelTempo");
+            var value = x.options[x.selectedIndex].value;
+            if ( value == "Di Sempre") {
+               document.getElementById("Filtro").style.display = "none";
+            }
+            if ( value == "Filtro Mesi") {
+               document.getElementById("Filtro").style.display = "inline";
+               document.getElementById("Filtro").innerHTML = "";
+               for ( i = 1 ; i <= 12 ; i++ ) {
+                  document.getElementById("Filtro").innerHTML += "<option>" + i + "</option>";   
+               }
+            }
+            if ( value == "Filtro Settimane") {
+               document.getElementById("Filtro").style.display = "inline";
+               document.getElementById("Filtro").innerHTML = "";
+               for ( i = 1 ; i <= 52 ; i++ ) {
+                  document.getElementById("Filtro").innerHTML += "<option>" + i + "</option>";   
+               }
+            }
+         }
+      </script>
+      
+   </body>
+</html>

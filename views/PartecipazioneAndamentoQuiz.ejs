@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> LAD - Partecipazione </title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/PartecipazioneAndamentoQuiz.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body>
+     
+      <% include Nav.ejs %>
+
+      <div id="contenuto">
+            
+         <div id="g-q1"> </div>
+         <div id="g-q2"> </div>
+         <div id="g-q3"> </div>
+         <div id="g-q4"> </div>
+         <div id="g-q5"> </div>
+         <div id="g-q6"> </div>
+         <div id="g-q7"> </div>
+         <div id="g-q8"> </div>
+         <div id="g-q9"> </div>
+         <div id="g-q10"> </div>
+         <div id="g-q11"> </div>
+         <div id="g-q12"> </div>
+         <div id="g-q13"> </div>
+         <div id="g-q14"> </div>
+         <div id="g-q15"> </div>
+         <div id="g-q16"> </div>
+         <div id="g-q17"> </div>
+   
+      </div>
+
+      <script type="text/javascript">
+         google.charts.load('current', {'packages':['corechart']});
+         google.charts.setOnLoadCallback(drawChart1);
+         google.charts.setOnLoadCallback(drawChart2);
+         google.charts.setOnLoadCallback(drawChart3);
+         google.charts.setOnLoadCallback(drawChart4);
+         google.charts.setOnLoadCallback(drawChart5);
+         google.charts.setOnLoadCallback(drawChart6);
+         google.charts.setOnLoadCallback(drawChart7);
+         google.charts.setOnLoadCallback(drawChart8);
+         google.charts.setOnLoadCallback(drawChart9);
+         google.charts.setOnLoadCallback(drawChart10);
+         google.charts.setOnLoadCallback(drawChart11);
+         google.charts.setOnLoadCallback(drawChart12);
+         google.charts.setOnLoadCallback(drawChart13);
+         google.charts.setOnLoadCallback(drawChart14);
+         google.charts.setOnLoadCallback(drawChart15);
+         google.charts.setOnLoadCallback(drawChart16);
+         google.charts.setOnLoadCallback(drawChart17);
+         function drawChart1() {
+           var data = google.visualization.arrayToDataTable(<%- q1 %>);
+           var options = {
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "1T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q1"));
+           chart.draw(data, options);
+         }
+         function drawChart2() {
+           var data = google.visualization.arrayToDataTable(<%- q2 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "2E",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q2"));
+           chart.draw(data, options);
+         }
+         function drawChart3() {
+           var data = google.visualization.arrayToDataTable(<%- q3 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "2T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q3"));
+           chart.draw(data, options);
+         }
+         function drawChart4() {
+           var data = google.visualization.arrayToDataTable(<%- q4 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "3E",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q4"));
+           chart.draw(data, options);
+         }
+         function drawChart5() {
+           var data = google.visualization.arrayToDataTable(<%- q5 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "3T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q5"));
+           chart.draw(data, options);
+         }
+         function drawChart6() {
+           var data = google.visualization.arrayToDataTable(<%- q6 %>);
+           var options = {
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "4T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q6"));
+           chart.draw(data, options);
+         }
+         function drawChart7() {
+           var data = google.visualization.arrayToDataTable(<%- q7 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "5E",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q7"));
+           chart.draw(data, options);
+         }
+         function drawChart8() {
+           var data = google.visualization.arrayToDataTable(<%- q8 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "5T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q8"));
+           chart.draw(data, options);
+         }
+         function drawChart9() {
+           var data = google.visualization.arrayToDataTable(<%- q9 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "6E",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q9"));
+           chart.draw(data, options);
+         }
+         function drawChart10() {
+           var data = google.visualization.arrayToDataTable(<%- q10 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "6T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q10"));
+           chart.draw(data, options);
+         }
+         function drawChart11() {
+           var data = google.visualization.arrayToDataTable(<%- q11 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "7E",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q11"));
+           chart.draw(data, options);
+         }
+         function drawChart12() {
+           var data = google.visualization.arrayToDataTable(<%- q12 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "7T",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q12"));
+           chart.draw(data, options);
+         }
+         function drawChart13() {
+           var data = google.visualization.arrayToDataTable(<%- q13 %>);
+           var options = {
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "8E",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q13"));
+           chart.draw(data, options);
+         }
+         function drawChart14() {
+           var data = google.visualization.arrayToDataTable(<%- q14 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "1PST",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q14"));
+           chart.draw(data, options);
+         }
+         function drawChart15() {
+           var data = google.visualization.arrayToDataTable(<%- q15 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "1PSE",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q15"));
+           chart.draw(data, options);
+         }
+         function drawChart16() {
+           var data = google.visualization.arrayToDataTable(<%- q16 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "2PST",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q16"));
+           chart.draw(data, options);
+         }
+         function drawChart17() {
+           var data = google.visualization.arrayToDataTable(<%- q17 %>);
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "2PSE",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7,8,9,10,11,12]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+                  ticks: [0,500,1000,1500]
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-q17"));
+           chart.draw(data, options);
+         }
+         
+      </script>
+
+   </body>
+</html>

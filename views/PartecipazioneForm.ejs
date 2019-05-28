@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> LAD - Partecipazione </title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/PartecipazioneForm.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body onload="f2()">
+     
+      <% include Nav.ejs %>
+
+      <div id="contenuto">
+            
+         <div id="filtro">
+            <form method="post" action="PartecipazioneAndamentoQuiz">
+               <button type="submit"> Quiz Nel Tempo </button>
+            </form>
+            <p> Applica Un Filtro Per Visualizzare Più Dettagli : </p>
+            <form action="PartecipazioneForm" method="get" id="filtroForm">
+               <select name="SelTempo" id="SelTempo" onchange="f1()">
+                  <option> Di Sempre </option>
+                  <option> Filtro Mesi </option>
+                  <option> Filtro Settimane </option>
+               </select>
+               <select id="Filtro" name="Filtro">
+               </select>
+               <input type="submit">
+            </form>
+         </div>
+
+         <div id="g-giorni"> </div>
+         <div id="g-psett"> </div>
+         <div id="g-ore"> </div>
+         <div id="g-capitoli"> </div>
+         <div id="g-parti"> </div>
+         <div id="g-t-e"> </div>                            
+
+      </div>
+
+      <script type="text/javascript">
+         google.charts.load('current', {'packages':['corechart']});
+         google.charts.setOnLoadCallback(drawChart1);
+         google.charts.setOnLoadCallback(drawChart2);
+         google.charts.setOnLoadCallback(drawChart3);
+         google.charts.setOnLoadCallback(drawChart4);
+         google.charts.setOnLoadCallback(drawChart5);
+         google.charts.setOnLoadCallback(drawChart6);
+         function drawChart1() {
+           var data = google.visualization.arrayToDataTable(<%- ggiorni %>);
+           var options = {
+              width: 425,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Giorni",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+                 ticks: [1,2,3,4,5,6,7]
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  }
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-giorni"));
+           chart.draw(data, options);
+         }
+         function drawChart2() {
+           var data = google.visualization.arrayToDataTable(<%- gpsett %>);
+           var options = {
+              width: 425,
+              backgroundColor: "#2d2d2d",
+              legend: {
+                 alignment: 'center',
+                 position: "right",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-psett"));
+           chart.draw(data, options);
+         }
+         function drawChart3() {
+           var data = google.visualization.arrayToDataTable((<%- gore %>));
+           var options = {
+              width: 425,
+              backgroundColor: "#2d2d2d",
+              legend: {
+                 alignment: 'center',
+                 position: "right",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-ore"));
+           chart.draw(data, options);
+         }
+         function drawChart4() {
+           var data = google.visualization.arrayToDataTable(<%- gcapitoli %>);
+           var options = {
+              width: 425,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                 title: "Capitoli",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 }
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  }
+               }
+           };   
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-capitoli"));
+           chart.draw(data, options);
+         }
+         function drawChart5() {
+           var data = google.visualization.arrayToDataTable(<%- gparti %>);
+           var options = {
+              width: 425,
+              backgroundColor: "#2d2d2d",
+              legend: {
+                 alignment: 'center',
+                 position: "right",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-parti"));
+           chart.draw(data, options);
+         }
+         function drawChart6() {
+           var data = google.visualization.arrayToDataTable(<%- gtipo %>);
+           var options = {
+              width: 425,
+              backgroundColor: "#2d2d2d",
+              legend: {
+                 alignment: 'center',
+                 position: "right",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-t-e"));
+           chart.draw(data, options);
+         }
+      </script>
+
+      <script>
+         function f1() {
+            var x = document.getElementById("SelTempo");
+            var value = x.options[x.selectedIndex].value;
+            if ( value == "Di Sempre") {
+               document.getElementById("Filtro").style.display = "none";
+            }
+            if ( value == "Filtro Mesi") {
+               document.getElementById("Filtro").style.display = "inline";
+               document.getElementById("Filtro").innerHTML = "";
+               for ( i = 1 ; i <= 12 ; i++ ) {
+                  document.getElementById("Filtro").innerHTML += "<option>" + i + "</option>";   
+               }
+            }
+            if ( value == "Filtro Settimane") {
+               document.getElementById("Filtro").style.display = "inline";
+               document.getElementById("Filtro").innerHTML = "";
+               for ( i = 1 ; i <= 52 ; i++ ) {
+                  document.getElementById("Filtro").innerHTML += "<option>" + i + "</option>";   
+               }
+            }
+         }
+         function f2() {
+            x = <%- s1 %>;
+            y =  parseInt(<%- s2 %>);
+            if( x == "Filtro Mesi") {
+               document.getElementById("SelTempo").innerHTML = 
+                  " <option> Di Sempre </option> " +
+                  " <option selected> Filtro Mesi </option> " + 
+                  " <option> Filtro Settimane </option> "
+               ;
+               document.getElementById("Filtro").style.display = "inline";
+               for ( i = 1 ; i <= 12 ; i++ ) {
+                  if ( i == y ) document.getElementById("Filtro").innerHTML += "<option selected>" + i + "</option>";
+                  else document.getElementById("Filtro").innerHTML += "<option>" + i + "</option>";   
+               }
+            }
+            if( x == "Filtro Settimane") {
+               document.getElementById("SelTempo").innerHTML = 
+                  " <option> Di Sempre </option> " +
+                  " <option> Filtro Mesi </option> " + 
+                  " <option selected> Filtro Settimane </option> "
+               ;
+               document.getElementById("Filtro").style.display = "inline";
+               for ( i = 1 ; i <= 52 ; i++ ) {
+                  if ( i == y ) document.getElementById("Filtro").innerHTML += "<option selected>" + i + "</option>";
+                  else document.getElementById("Filtro").innerHTML += "<option>" + i + "</option>";   
+               }
+            }
+
+         }
+      </script>    
+
+   </body>
+</html>

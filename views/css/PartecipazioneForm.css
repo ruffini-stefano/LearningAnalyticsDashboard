@@ -1,0 +1,70 @@
+body {
+   background-color: rgb(45,45,45);
+}
+
+p {
+   color: white;
+}
+
+select {
+   height: 30px;
+}
+
+#contenuto {
+   width: 1280px;
+   height: 520px;
+   display: grid;
+   grid-template-rows: 1fr 4fr 4fr;
+   grid-template-columns: auto auto auto;
+   justify-items: stretch;
+   align-items: stretch;
+   justify-content: stretch;
+   align-content: stretch;
+}
+
+#filtro {
+   grid-row: 1;
+   grid-column-start: 1;
+   grid-column-end: 4;
+   align-self: center;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+#filtroForm select {
+   margin-right: 5px;
+}
+
+#Filtro {
+   display: none;
+}
+
+#g-giorni {
+   grid-row: 2;
+   grid-column: 1;
+}
+
+#g-psett {
+   grid-row: 2;
+   grid-column: 2;
+}
+
+#g-ore {
+   grid-row: 2;
+   grid-column: 3;
+}
+
+#g-capitoli {
+   grid-row: 3;
+   grid-column: 1;
+}
+
+#g-parti {
+   grid-row: 3;
+   grid-column: 2;
+}
+
+#g-t-e {
+   grid-row: 3;
+   grid-column: 3;
+}

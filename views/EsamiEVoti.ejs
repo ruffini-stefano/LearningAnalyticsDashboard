@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> LAD - Esami E Voti </title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/EsamiEVoti.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body>
+      
+      <nav class="navbar navbar-dark navbar-expand-lg justify-content-center" style="background-color: #3366cc">
+         <a class="navbar-brand" href="#"> LAD </a>
+      
+         <div class="navbar-nav">
+            <a class="nav-link" href="Partecipazione"> Partecipazione </a>
+            <a class="nav-link" href="Completamento"> Completamento </a>
+            <a class="nav-link active" href="EsamiEVoti"> Esami E Voti </a>
+            <a class="nav-link" href="DivisioneInGruppi"> Divisione In Gruppi </a>
+         </div>  
+      </nav>
+
+      <div id="contenuto">
+
+         <div id="g-1"> </div>
+         <div id="g-2"> </div>
+         <div id="g-3"> </div>
+         <div id="g-3a"> </div>
+         <div id="g-4"> </div>
+         <div id="g-4a"> </div>
+         <div id="g-5"> </div>
+         <div id="g-6"> </div>
+         <div id="g-7"> </div>
+         <div id="g-8"> </div>
+
+         <p id="t5"> Primo Parziale </p>
+         <p id="t6"> Secondo Parziale </p>
+         <p id="t7"> Primo Appello </p>
+         <p id="t8"> Secondo Appello </p>
+                  
+      </div>
+      
+      <script type="text/javascript">
+         google.charts.load('current', {'packages':['corechart']});
+         google.charts.setOnLoadCallback(drawChart1);
+         google.charts.setOnLoadCallback(drawChart2);
+         google.charts.setOnLoadCallback(drawChart3);
+         google.charts.setOnLoadCallback(drawChart3a);
+         google.charts.setOnLoadCallback(drawChart4);
+         google.charts.setOnLoadCallback(drawChart4a);
+         google.charts.setOnLoadCallback(drawChart5);
+         google.charts.setOnLoadCallback(drawChart6);
+         google.charts.setOnLoadCallback(drawChart7);
+         google.charts.setOnLoadCallback(drawChart8);
+         function drawChart1() {
+           var data = google.visualization.arrayToDataTable(<%- g1 %>)
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Partecipazione Esami - Numero Studenti",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-1"));
+           chart.draw(data, options);
+         }
+         function drawChart2() {
+           var data = google.visualization.arrayToDataTable(<%- g2 %>)
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Partecipazione Esami - Percentuale Studenti",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-2"));
+           chart.draw(data, options);
+         }
+         function drawChart3() {
+           var data = google.visualization.arrayToDataTable(<%- g3 %>)
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Media Voti Esami Teoria",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-3"));
+           chart.draw(data, options);
+         }
+         function drawChart3a() {
+           var data = google.visualization.arrayToDataTable(<%- g3a %>)
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Media Voti Sim. Teoria",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-3a"));
+           chart.draw(data, options);
+         }
+         function drawChart4() {
+           var data = google.visualization.arrayToDataTable(<%- g4 %>)
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Media Voti Esami Esercizi",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-4"));
+           chart.draw(data, options);
+         }
+         function drawChart4a() {
+           var data = google.visualization.arrayToDataTable(<%- g4a %>)
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Media Voti Sim. Esercizi",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-4a"));
+           chart.draw(data, options);
+         }
+         function drawChart5() {
+           var data = google.visualization.arrayToDataTable((<%- g5 %>));
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              pieStartAngle: 180,
+              legend: {
+                 alignment: 'center',
+                 position: "bottom",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-5"));
+           chart.draw(data, options);
+         }
+         function drawChart6() {
+           var data = google.visualization.arrayToDataTable((<%- g6 %>));
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              pieStartAngle: 180,
+              legend: {
+                 alignment: 'center',
+                 position: "bottom",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-6"));
+           chart.draw(data, options);
+         }
+         function drawChart7() {
+           var data = google.visualization.arrayToDataTable((<%- g7 %>));
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              pieStartAngle: 180,
+              legend: {
+                 alignment: 'center',
+                 position: "bottom",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-7"));
+           chart.draw(data, options);
+         }
+         function drawChart8() {
+           var data = google.visualization.arrayToDataTable((<%- g8 %>));
+           var options = {
+              width: 314,
+              backgroundColor: "#2d2d2d",
+              pieStartAngle: 180,
+              legend: {
+                 alignment: 'center',
+                 position: "bottom",
+                 textStyle: {color: 'white', fontSize: 15},
+               }
+           };
+           var chart = new google.visualization.PieChart(document.getElementById("g-8"));
+           chart.draw(data, options);
+         }
+      </script>
+
+   </body>
+</html>

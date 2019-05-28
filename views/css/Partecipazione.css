@@ -1,0 +1,52 @@
+body {
+   background-color: rgb(45,45,45);
+}
+
+p {
+   color: white;
+}
+
+select {
+   height: 30px;
+}
+
+#contenuto {
+   width: 1280px;
+   height: 520px;
+   display: grid;
+   grid-template-rows: 4fr 4fr 1fr;
+   grid-template-columns: auto auto;
+   justify-items: stretch;
+   align-items: stretch;
+   justify-content: stretch;
+   align-content: stretch;
+}
+
+#g-mesi {
+   grid-row: 1;
+   grid-column-start: 1;
+   grid-column-end: 3;
+}
+
+#g-settimane {
+   grid-row: 2;
+   grid-column-start: 1;
+   grid-column-end: 3;
+}
+
+#filtro {
+   grid-row: 3;
+   grid-column-start: 1;
+   grid-column-end: 3;
+   align-self: center;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+#filtro form select {
+   margin-right: 5px;
+}
+
+#Filtro {
+   display: none;
+}

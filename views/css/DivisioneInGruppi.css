@@ -1,0 +1,132 @@
+body {
+   background-color: rgb(45,45,45);
+}
+
+#contenuto {
+   display: grid;
+   grid-template-rows: 300px 300px 300px 300px;
+   grid-template-columns: 425px 425px 425px;
+   justify-items: center;
+   align-items: stretch;
+   justify-content: stretch;
+   align-content: stretch;
+}
+
+#info1 {
+   grid-row: 1;
+   grid-column: 1;
+   display: grid;
+   grid-template-rows: auto auto auto;
+   grid-template-columns: auto auto;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+}
+
+#g1t {
+   grid-row: 1;
+   grid-column: 2;
+}
+
+#g1e {
+   grid-row: 1;
+   grid-column: 3;
+}
+
+#info2 {
+   grid-row: 2;
+   grid-column: 1;
+   display: grid;
+   grid-template-rows: auto auto auto;
+   grid-template-columns: auto auto;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+}
+
+#g2t {
+   grid-row: 2;
+   grid-column: 2;
+}
+
+#g2e {
+   grid-row: 2;
+   grid-column: 3;
+}
+
+#info3 {
+   grid-row: 3;
+   grid-column: 1;
+   display: grid;
+   grid-template-rows: auto auto auto;
+   grid-template-columns: auto auto;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+}
+
+#g3t {
+   grid-row: 3;
+   grid-column: 2;
+}
+
+#g3e {
+   grid-row: 3;
+   grid-column: 3;
+}
+
+#info4 {
+   grid-row: 4;
+   grid-column: 1;
+   display: grid;
+   grid-template-rows: auto auto auto;
+   grid-template-columns: auto auto;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+}
+
+#g4t {
+   grid-row: 4;
+   grid-column: 2;
+}
+
+#g4e {
+   grid-row: 4;
+   grid-column: 3;
+}
+
+.c11 {
+   grid-row: 1;
+   grid-column-start: 1;
+   grid-column-end: 3;
+   color: white;
+}
+
+.c21 {
+   grid-row: 2;
+   grid-column: 1;
+   color: white;
+}
+
+.c22 {
+   grid-row: 2;
+   grid-column: 2;
+   color: #3366cc
+}
+
+.c31 {
+   grid-row: 3;
+   grid-column: 1;
+   color: white;
+}
+
+.c32 {
+   grid-row: 3;
+   grid-column: 2;
+   color: #3366cc
+}

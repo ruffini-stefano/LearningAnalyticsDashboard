@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> LAD - Completamento </title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/Completamento.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body>
+      
+      <nav class="navbar navbar-dark navbar-expand-lg justify-content-center" style="background-color: #3366cc">
+         <a class="navbar-brand" href="#"> LAD </a>
+      
+         <div class="navbar-nav">
+            <a class="nav-link" href="Partecipazione"> Partecipazione </a>
+            <a class="nav-link active" href="Completamento"> Completamento </a>
+            <a class="nav-link" href="EsamiEVoti"> Esami E Voti </a>
+            <a class="nav-link" href="DivisioneInGruppi"> Divisione In Gruppi </a>
+         </div>  
+      </nav>
+
+      <div id="contenuto">
+
+         <div id="g-completamenton"> </div>
+         <div id="g-completamentop"> </div>
+                  
+      </div>
+      
+      <script type="text/javascript">
+         google.charts.load('current', {'packages':['corechart']});
+         google.charts.setOnLoadCallback(drawChart1);
+         google.charts.setOnLoadCallback(drawChart2);
+         function drawChart1() {
+           var data = google.visualization.arrayToDataTable(<%- completamenton %>)
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Numero Studenti",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-completamenton"));
+           chart.draw(data, options);
+         }
+         function drawChart2() {
+           var data = google.visualization.arrayToDataTable(<%- completamentop %>)
+           var options = {
+              width: 630,
+              backgroundColor: "#2d2d2d",
+              legend: { position: "none" },
+              hAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                 title: "Percentuale Studenti",
+                 titleTextStyle: {
+                    bold: false,
+                    italic: true,
+                    fontSize: 15,
+                    color: "white"
+                 },
+                 textStyle: {
+                    color: "white"
+                 },
+               },
+               vAxis: {
+                  gridlines: {
+                     color: 'transparent'
+                  },
+                  textStyle: {
+                     color: "white"
+                  },
+               }
+            };  
+           var chart = new google.visualization.ColumnChart(document.getElementById("g-completamentop"));
+           chart.draw(data, options);
+         }
+      </script>
+
+   </body>
+</html>
