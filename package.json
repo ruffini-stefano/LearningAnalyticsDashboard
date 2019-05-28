@@ -1,0 +1,16 @@
+{
+  "name": "sito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Stefano Ruffini",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "neo4j-driver": "^1.7.2"
+  }
+}
