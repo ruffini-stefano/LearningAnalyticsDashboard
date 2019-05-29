@@ -6,6 +6,12 @@ Questo software è uno strumento che mostra con chiarezza e semplicità varie in
 
 Progetto realizzato per lo stage trimestrale del corso di Laurea Triennale in Informatica dell'università degli studi di Milano-Bicocca.
 
+Per maggiori informazioni consultare:
+
+[Tesi](https://github.com/ruffini-stefano/Tesi/blob/master/tesi.pdf)
+
+[Presentazione Tesi](https://github.com/ruffini-stefano/Tesi/blob/master/tesi_presentazione.pdf)
+
 ## Immagini
 
 ![](Immagini/1.png)
