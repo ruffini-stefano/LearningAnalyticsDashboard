@@ -22,4 +22,3 @@ Per maggiori informazioni consultare:
 ![](Immagini/6.png)
 ![](Immagini/7.png)
 ![](Immagini/8.png)
-![](Immagini/9.png)
